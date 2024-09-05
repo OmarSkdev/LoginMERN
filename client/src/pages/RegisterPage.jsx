@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function RegisterPage() {
     const { register, handleSubmit,
@@ -50,8 +50,11 @@ function RegisterPage() {
                 placeholder="Password" />
                 { errors.password && <p className="text-red-500">Password es requerido</p>}
 
-                <button type="submit">Registro</button>
+                <button type="submit" className="font-medium text-gray-900 bg-white  border-gray-200">Registro</button>
             </form>
+            <p className='flex gap-x-2 justify-between'>
+                    Inicia Sesión <Link to='/login' className='text-sky-500'>Ingresar</Link>
+            </p>
         </div>
     )
 }
